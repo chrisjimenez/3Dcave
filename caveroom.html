@@ -1,0 +1,63 @@
+
+<!-- 
+   By: Chris Jimenez
+   Final Project submission
+   index.html
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Final Project: Using Headtracking to Create 3D Display</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<script src = js/room.js></script>
+		<script src = js/character.js></script>
+
+		<!-- libs -->
+		<script src = libs/headtrackr.js></script>
+		<script src = libs/three.min.js></script>
+		<script src = libs/Detector.js></script>
+		<script src = libs/stats.min.js></script>
+		<script src = libs/screenfull.js></script>
+		<script src = libs/ImprovedNoise.js></script>
+		<script src = libs/threex.animation.js></script>
+		<script src = libs/threex.animations.js></script>
+		<script src = libs/threex.minecraft.js></script>
+		<script src = libs/threex.minecraftcharbodyanim.js></script>
+		<script src = libs/threex.minecraftcharheadanim.js></script>
+
+	</head>
+	<body bgcolor=#A9A9A9>
+		<center>
+			<style>
+				h1 {text-align:center;}
+				h3 {text-align:center;}
+			</style>
+
+			<font color=white face=helvetica>
+				<center><h1>Final Project: Using Headtracking to Create 3D Display</h1></center>
+			</font>
+
+
+			<font color=BLACK face=helvetica>
+				<h3>** SCROLL DOWN AND REFRESH! ***</h3>
+				<p>For a better experience, use Chrome in Presentation Mode and refresh the page. The video input will be displayed below this text, so use it to make sure your face is in the frame so that the tracker can work properly. If it seems like the tracker is not working right, just refresh the page. Slowly move your body side to side, instead of tilting your head, to interact with the room.</p>
+			</font>
+
+			<canvas id="inputCanvas" width="640" height="480" style="display:none">
+			:/ Looks like you cant load the canvas. Try a different browser!
+			</canvas>
+			<video id="inputVideo" autoplay loop></video>
+			<script src = js/main.js> </script>
+			
+
+		</center>
+	</body>
+</html>
+
+
+
+
+
+
