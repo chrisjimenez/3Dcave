@@ -1,22 +1,26 @@
-//
-//	3D perpective cave room 
-//	By Chris Jimenez
-//	character.js
-//
+/***************************************************************************		
+*	3D perpective cave room													
+*	By Chris Jimenez
+*
+*	character.js
+***************************************************************************/
 
+//	to hold functions that are to be updated
 var updateFcts	= [];
 
 var caveCharacters = [];
 
+// keep track of time for character animation
 var lastTimeMsec = null;
 
 
-// 	createCharacters() FUNCTION
-// 		numOfCharacters = how many characters in the scene
-// 		they are randomly placed in the scene based
-// 		on constratins in the randomPosition() function
+/**
+* 	Creates characters on the scene given
+*	numOfCharacters parameter.
+*/
 function createCharacters(numOfCharacters){
 
+	// if no value is passed, set to default 10
 	if(!numOfCharacters) numOfCharacters = 10;
 
 	for( var i = 0; i < numOfCharacters; i++ ){
@@ -27,8 +31,9 @@ function createCharacters(numOfCharacters){
 	placeCharacters();
 }
 
-// 	placeCharacters() FUNCTION
-//	 	places all characters in the scene
+/**
+*	Adds all characters to the scene.
+*/
 function placeCharacters(){
 	// randomly place characters 
 	for(var i = 0; i < caveCharacters.length; i++){
@@ -37,8 +42,9 @@ function placeCharacters(){
 }
 
 
-// 	placeCharacter() FUNCTION
-// 		pos param with xyz position of character
+/**
+*	Adds and animates character on to the scene.
+*/
 function placeCharacter(character){
 	var pos = randomPosition();
 
@@ -63,8 +69,9 @@ function placeCharacter(character){
 }
 
 
-// 	animateCharacters() FUNCTION
-// 		no params
+/**
+*	Animates characters on the screen.
+*/	
 function animateCharacters(){
 	var nowMsec = Date.now;
   	lastTimeMsec  = lastTimeMsec || nowMsec-1000/60;
@@ -78,13 +85,16 @@ function animateCharacters(){
 }
 
 
-// 	randomPosition() FUNCTION
-// 		no params
+/**
+*	Generates random x,y,z position
+*/
 function randomPosition(){
 	var position = [0,0,0];
 
-	var x = Math.floor(Math.random()* 150) + 1; // this will get a number between 1 and 150
-	x *= Math.floor(Math.random()*2) == 1 ? 1 : -1; // this will add minus sign in 50% of the numbers
+	//	this will generate a random number between
+	//	-150 and 150 for x, y and z
+	var x = Math.floor(Math.random()* 150) + 1; 
+	x *= Math.floor(Math.random()*2) == 1 ? 1 : -1; 
 
 	var y = Math.floor(Math.random()* 150) + 1; 
 	y *= Math.floor(Math.random()*2) == 1 ? 1 : -1; 
@@ -99,23 +109,29 @@ function randomPosition(){
 	return position;
 }
 
-// 	moveCharacters() FUNCTION
-// 		no params
+/**
+*	Moves the characters towards the screen or camera.
+*/
 function moveCharacters(){
+
+	//	loop through each character
 	for( var i = 0; i < caveCharacters.length; i++){
 
+		//	generate random speed for current chracter
 		var randomSpeed = Math.floor(Math.random() * 10) + 2;
 		caveCharacters[i].root.position.z += randomSpeed;
 
-
+		//	return to init position if character is too close
 		if(caveCharacters[i].root.position.z >= 2000){
 		 caveCharacters[i].root.position.z = -3000;
 		}
 	}
 }
 
-// 	getRandomTetxure() FUNCTION
-//		no params
+/**
+*	returns a random  minecraft skin, where the default is the santa
+*	skin. Skins could be foudn on planetminecraft.com.
+*/
 function getRandomSkin(){
 	// default is santa texture!
 	var skin = "images/santa.png";

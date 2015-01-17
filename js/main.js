@@ -1,8 +1,9 @@
-//
-//  3D perpective cave room 
-//  By Chris Jimenez
-//  main.js
-//
+/***************************************************************************    
+* 3D perpective cave room                         
+* By Chris Jimenez
+*
+* main.js
+***************************************************************************/
 
 
 //  check to see if WebGL compatible
@@ -11,13 +12,13 @@ if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 var videoInput = document.getElementById('inputVideo');
 var canvasInput = document.getElementById('inputCanvas');
 
-//  SET UP 3D SCENE
+//  set up 3D scene
 var container, stats;
 var camera, scene, renderer;
 var plane;
 
 
-//  SET UP STAT WINDOW
+//  set up stat window
 var stats = new Stats();
 stats.domElement.style.position = 'absolute';
 stats.domElement.style.top = '0px';
@@ -28,16 +29,17 @@ setUpHeadTracker();
 animate();
 
 
-//  ADD HEAD TRACKING LISTENER...
-document.addEventListener('headtrackingEvent', function(event) {
-    scene.fog = new THREE.Fog( 0x000000, 1+(event.z*27), 2000+(event.z*27) );
+//  add head tracking listener
+dampingocument.addEventListener('headtrackingEvent', function(event) {
+  scene.fog = new THREE.Fog( 0x000000, 1+(event.z*27), 2000+(event.z*27) );
 }, false);
 
 
-//  =====================================================
+// FUNCTIONS...
 
-//  INIT FUNCTION
-//    where all setup code is placed
+/**
+* Sets up the scene, camera, and renderer.
+*/
 function init() {
 
   container = document.createElement( 'div' );
@@ -62,8 +64,9 @@ function init() {
   container.appendChild( renderer.domElement );
 }
 
-//  ANIMATE FUNCTION
-//    gets repeatedly called
+/**
+*   Gets repeatedly called to create the animation in the scene.
+*/
 function animate() {
 
   renderer.render(scene, camera);
@@ -73,17 +76,18 @@ function animate() {
   requestAnimationFrame( animate );
   animateCharacters();
   moveCharacters();
-
 }
 
+/**
+* Sets up the headtracker.
+*/
 function setUpHeadTracker(){
   // controller
   headtrackr.controllers.three.realisticAbsoluteCameraControl(camera, 27, [0,0,50], new THREE.Vector3(0,0,0), {damping : 0.5});
 
+  //  create headtrackr object with given parameters
   var htracker = new headtrackr.Tracker({fadeVideo : true });
   htracker.init(videoInput, canvasInput);
   htracker.start();
 }
-
-//  ===========================================================
   
