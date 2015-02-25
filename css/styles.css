@@ -4,77 +4,46 @@
 * CSS for Predator vs. Prey project site
 */
 
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding: 20px;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #454458;
+  color: white;
+}
 
-#content {
-	margin-top:20px;
-	margin-bottom:auto;
-	margin-right:80px;
-	margin-left:80px;
+h1 {
+  text-align: center;
+  font-size: 8em;
+  margin: auto;
+}
 
-	padding: 20px;
-
-	background-color:#000000;
-	min-height:400px;	
-	box-shadow: 10px 10px 20px #000000;
+p{
+  color: darkgrey;
 }
 
 
-
-#PredvPrey {
-    display: block;
-    margin: auto;
-}
-
-
-#title {
-	color: #FFFFFF ;
-	font-size:4rem;
-	font-weight:lighter;
-	line-height:3.5rem;
-	margin-bottom: auto;
-	font-family: 'Orbitron', sans-serif;
-	text-align:center;
-}
-
-
-#subtitle {
-	color:  #808080;
-	text-align:center;
-}
-
-
-p {
-	font-weight:lighter;
-	color: #F0F0F0 ;
-}
-
-
-body{
-	background-color: purple;
-}
-
-img {
-	display:block;
-	margin: auto;
-	border: 1px solid grey;
+.alert-danger{
+  font-family: Arial;
+  padding:0.3em;
+  border: red solid 1px;
 }
 
 .icon{
 	float: left;
-	border : 0px;
 	width: 2em;
 	height: 2em;
-	margin: 5px
+	margin: auto;
 }
 
-a{
-	margin-top: 10px;
-	margin-right: 10px;
-	margin-bottom: 0px;
+
+
+/* BUTTON STYLE */
+.btn {
+  display:block;
 }
 
-h6 {
-	color: red;
-
-
+#button-text {
+  color: white;
+  padding: 0.5em;
 }

@@ -1,0 +1,73 @@
+<!-- 
+  By: Chris Jimenez
+  
+  Project site for 3D Cave Project.
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <!-- Basic Page Needs
+	    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	    <!-- Mobile Specific metas 
+	    –––––––––––––––––––––––––––––––––––––––––––––– -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	    <!-- js libs 
+	    –––––––––––––––––––––––––––––––––––––––––––––– -->
+	    <script type="text/javascript" src = "libs/processing.min.js"></script>
+	    <script type="text/javascript" src = "libs/minim.js"></script>
+	    <script type="text/javascript" src = "http://code.jquery.com/jquery.js"></script>
+	    <script type="text/javascript" src = "libs/bootstrap.min.js"></script>
+
+	    <!-- Project js files/libs 
+	    –––––––––––––––––––––––––––––––––––––––––––––– -->
+	    <script type="text/javascript" src = js/room.js></script>
+		<script type="text/javascript" src = js/character.js></script>
+
+		<script type="text/javascript" src = libs/headtrackr.js></script>
+		<script type="text/javascript" src = libs/three.min.js></script>
+		<script type="text/javascript" src = libs/Detector.js></script>
+		<script type="text/javascript" src = libs/stats.min.js></script>
+		<script type="text/javascript" src = libs/screenfull.js></script>
+		<script type="text/javascript" src = libs/ImprovedNoise.js></script>
+		<script type="text/javascript" src = libs/threex.animation.js></script>
+		<script type="text/javascript" src = libs/threex.animations.js></script>
+		<script type="text/javascript" src = libs/threex.minecraft.js></script>
+		<script type="text/javascript" src = libs/threex.minecraftcharbodyanim.js></script>
+		<script type="text/javascript" src = libs/threex.minecraftcharheadanim.js></script>
+
+	    <!-- FONT
+	    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	    <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+	    
+	    <!-- CSS
+	    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	    <link rel="stylesheet" href="css/bootstrap.min.css">
+	    <link rel="stylesheet" href="css/styles.css">
+
+
+        <title>Using Headtracking to Create a 3D Display</title>
+	</head>
+	<body>
+		<p>
+		  For a better experience, use Chrome in Presentation Mode and refresh the page. The video input will be displayed below this text, so use it to make sure your face is in the frame so that the tracker can work properly. If it seems like the tracker is not working right, just refresh the page. Slowly move your body side to side, instead of tilting your head, to interact with the room.
+		</p>
+
+		<canvas id="inputCanvas" width="640" height="480" style="display:none">
+		 :/ Looks like you cant load the canvas. Try a different browser!
+		</canvas>
+		<video id="inputVideo" autoplay loop></video>
+		<script src = js/main.js> </script>
+	</body>
+</html>
+
+
+
+
+
+

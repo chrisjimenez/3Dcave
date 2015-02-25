@@ -134,7 +134,7 @@ function moveCharacters(){
 */
 function getRandomSkin(){
 	// default is santa texture!
-	var skin = "images/santa.png";
+	var skin = "assets/santa.png";
 
 	var numOfSkins = 20;
 
@@ -145,67 +145,67 @@ function getRandomSkin(){
 
 	switch (randSkin) {
 	    case 0:
-	        skin = "images/santa.png";
+	        skin = "assets/santa.png";
 	        break;
 	    case 1:
-	        skin = "images/santa2.png";
+	        skin = "assets/santa2.png";
 	        break;
 	    case 2:
-	        skin = "images/santa3.png";
+	        skin = "assets/santa3.png";
 	        break;
 	    case 3:
-	        skin = "images/santa.png";
+	        skin = "assets/santa.png";
 	        break;
 	    case 4:
-	        skin = "images/zelda.png";
+	        skin = "assets/zelda.png";
 	        break;
 	    case 5:
-	        skin = "images/pikachu.png";
+	        skin = "assets/pikachu.png";
 	        break;
 	    case 6:
-	        skin = "images/nyan.png";
+	        skin = "assets/nyan.png";
 	        break;
 	    case 7:
-	        skin = "images/moss.png";
+	        skin = "assets/moss.png";
 	        break;
 	    case 8:
-	        skin = "images/psy.png";
+	        skin = "assets/psy.png";
 	        break;
 	    case 9:
-	        skin = "images/leo.png";
+	        skin = "assets/leo.png";
 	        break;
 	    case 10:
-	        skin = "images/jake.png";
+	        skin = "assets/jake.png";
 	        break;
 	    case 11:
-	        skin = "images/ironman.png";
+	        skin = "assets/ironman.png";
 	        break;
 	    case 12:
-	        skin = "images/trooper.png";
+	        skin = "assets/trooper.png";
 	        break;
 	    case 13:
-	        skin = "images/goku.png";
+	        skin = "assets/goku.png";
 	        break;
 	    case 14:
-	        skin = "images/finn.png";
+	        skin = "assets/finn.png";
 	        break;
 	    case 15:
-	        skin = "images/deadpool.png";
+	        skin = "assets/deadpool.png";
 	        break;
 	    case 16:
-	        skin = "images/daftpunk.png";
+	        skin = "assets/daftpunk.png";
 	        break;
 	    case 17:
-	        skin = "images/cookie.png";
+	        skin = "assets/cookie.png";
 	        break;
 	    case 18:
-	        skin = "images/nyan.png";
+	        skin = "assets/nyan.png";
 	        break;
 	    case 19:
-	        skin = "images/yeti.png";
+	        skin = "assets/yeti.png";
 	        break;
 	    case 20:
-	        skin = "images/batman.png";
+	        skin = "assets/batman.png";
 	        break;
 
     }
