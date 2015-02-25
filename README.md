@@ -1,3 +1,3 @@
-# caveroom
+# 3D Cave Room using Headtracking
 __________________________________________________________________
-You could access the project site [here](https://files.nyu.edu/caj303/public/graphics/final/index.html)
+You could access the project site [here](http://chrisjimenez.github.io/3Dcave/)
