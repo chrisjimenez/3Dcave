@@ -1,77 +1,113 @@
-
 <!-- 
-   By: Chris Jimenez
-   Final Project submission
-   index.html
--->
+  By: Chris Jimenez
+  
+  Project site for Predator vs.Prey Processing Project.
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
 
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Computer Graphics Final Project - Using Headtracking to Create a 3D Display</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	</head>
-	<body bgcolor=#A9A9A9 face = helvitica>
-		<center>
-			<font color=white face=helvetica>
-				<center><h1>Final Project: Using Headtracking to Create a 3D Display</h1></center>
-			</font>
+    <!-- Mobile Specific metas 
+    –––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- js libs 
+    –––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script type="text/javascript" src ="libs/processing.min.js"></script>
+    <script type="text/javascript" src ="libs/minim.js"></script>
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/styles.css">
 
 
-			<font color=RED face=helvetica>
-				<h4>** YOU NEED A CAMERA IN ORDER TO INTERACT WITH THE PROJECT ***</h4>
-				<h4>** PLEASE USE CHROME OR FIREFOX ***</h4>
-				<h4>** PLEASE MAKE SURE YOU ARE IN A WELL LIT ROOM ***</h4>
-			</font>
-			
-			<h3> <a href="https://files.nyu.edu/caj303/public/graphics/final/caveroom.html">ACCESS PROJECT</a> </h3>
-			<hr>
-		</center>
-		<font color=BLACK face=helvetica>
-			<h3><u>ABOUT</u></h4>
+    <title>Using Headtracking to Create a 3D Display</title>
+  </head>
 
-			<p>
-			For my final project, I wanted to do something that would involve the user interacting in some way. So after going through a couple of ideas, I finally decided to do a project that would involve the camera and create a 3D display based on headtracking. In other words, use the camera as a way to track the users head and manipulate the scene such that it would look to them as if they were looking inside a room or window. I was inspired by the work of Johnny Lee. But I wanted to do my own playful version of it using THREE.js. Since it's Decemeber, I made a cave room with floating Christmas creepers! You could check out Johnny's video, and other videos, below.
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <body>
+    <div id = "content">
+      <h1 id = "title" >Using Headtracking to Create a 3D Display</h1>
+      <p  id = "subtitle">Project Site</p>
 
-			</p>
+      <h6>** YOU NEED A CAMERA IN ORDER TO INTERACT WITH THE PROJECT **</h6>
+      <h6>** PLEASE USE CHROME OR FIREFOX **</h6>
+      <h6>** PLEASE MAKE SURE YOU ARE IN A WELL LIT ROOM **</h6>
 
-			<iframe width="420" height="315" src="//www.youtube.com/embed/Jd3-eiid-Uw" frameborder="0" allowfullscreen></iframe>
-			<iframe width="560" height="315" src="//www.youtube.com/embed/h9kPI7_vhAU" frameborder="0" allowfullscreen></iframe>
-			<iframe width="560" height="315" src="//www.youtube.com/embed/bBQQEcfkHoE" frameborder="0" allowfullscreen></iframe>
+      <h3> <a href="caveroom.html">ACCESS PROJECT</a> </h3>
+      <hr>
 
-			<h3><u>DEVELOPMENT</u></h4>
-			<h4>Scene</h4>
+	  <!-- Description + Canvas
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <h3><u>ABOUT</u></h4>
 
-			To create the cave room, I only used four planes -- the ceiling of the cave, the walls of the cave(left and right) and the sandy ground. To make the walls and the ceiling look rocky and natural, I used the improved noise function without shading. The shadow effect in the cave were created using THREE.Fog, which increases as we look farther away, which makes it feel like you're actually looking inside a room. The camera is set up such that the user is actually staring at positon [0,0,0] in the scene, and we are at some distance z. So the walls were setup with respect to this. This was perhaps the most difficult part because the planes had to be adjusted such that the edges fit perfectly with the edge of the camera. Otherwise, it'd look weird. You can see this when the headtracking doesnt work properly and the camera moves outside the walls. 
-			
-			<h4>Characters</h4>
-			The characters were created by using simple geometry objects. I decided to use Minecraft characters, since they were the easiest to draw and less work is needed to render them. The idea was to have most of the characters(actually 75% of them) to be a creature wearing a Christmas outfit. But 25% of the time it would be some random character showing up instead of a creature. There are about 18 other characters besides the Christmas creature. They're all characters from shows that I like, games that I've played, or artists. Oh and I included Nyan Cat because why not. I got all the skins for the characters from <a href="http://www.planetminecraft.com/">planetminecraft.com</a>.
-			
+      <p>
+        For my final project, I wanted to do something that would involve the user interacting in some way. So after going through a couple of ideas, I finally decided to do a project that would involve the camera and create a 3D display based on headtracking. In other words, use the camera as a way to track the users head and manipulate the scene such that it would look to them as if they were looking inside a room or window. I was inspired by the work of Johnny Lee. But I wanted to do my own playful version of it using THREE.js. Since it's Decemeber, I made a cave room with floating Christmas creepers! You could check out Johnny's video, and other videos, below.
+      </p>
 
-			<h4>Libraries</h4>
-			<p>
-			<a href="http://threejs.org/">THREE.js </a>-- library used to create and display animated 3D computer graphics on a Web browser <br>
-			<a href="https://github.com/jeromeetienne/threex/tree/master/src/threex.minecraft">THREEX.minecraft.js</a>-- bunch of game extension libraries for THREE.js to create minecraft characters <br>
-			<a href="https://github.com/auduno/headtrackr/">headtrackr.js</a>-- Headtracking library <br>
-			</p>
+      <iframe width="420" height="315" src="//www.youtube.com/embed/Jd3-eiid-Uw" frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="//www.youtube.com/embed/h9kPI7_vhAU" frameborder="0" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="//www.youtube.com/embed/bBQQEcfkHoE" frameborder="0" allowfullscreen></iframe>
 
-			<h3><u>VIDEO DEMO/SCREENSHOTS</u></h4>
-		
+      <h3><u>DEVELOPMENT</u></h4>
+      <h4>Scene</h4>
 
-			<img src="https://files.nyu.edu/caj303/public/graphics/final/demos/screenshot1.png" alt= "screenshot1" style="width:304px;height:228px">
-			<img src="https://files.nyu.edu/caj303/public/graphics/final/demos/screenshot2.png" alt= "screenshot2" style="width:304px;height:228px">
-			<img src="https://files.nyu.edu/caj303/public/graphics/final/demos/screenshot3.png" alt= "screenshot3" style="width:304px;height:228px">
-			<br>
-			<iframe width="560" height="315" src="//www.youtube.com/embed/GoH_t-0wlXc" frameborder="0" allowfullscreen></iframe>
+      <p>
+        To create the cave room, I only used four planes -- the ceiling of the cave, the walls of the cave(left and right) and the sandy ground. To make the walls and the ceiling look rocky and natural, I used the improved noise function without shading. The shadow effect in the cave were created using THREE.Fog, which increases as we look farther away, which makes it feel like you're actually looking inside a room. The camera is set up such that the user is actually staring at positon [0,0,0] in the scene, and we are at some distance z. So the walls were setup with respect to this. This was perhaps the most difficult part because the planes had to be adjusted such that the edges fit perfectly with the edge of the camera. Otherwise, it'd look weird. You can see this when the headtracking doesnt work properly and the camera moves outside the walls.
+      </p> 
+      
+      <h4>Characters</h4>
+      <p>
+        The characters were created by using simple geometry objects. I decided to use Minecraft characters, since they were the easiest to draw and less work is needed to render them. The idea was to have most of the characters(actually 75% of them) to be a creature wearing a Christmas outfit. But 25% of the time it would be some random character showing up instead of a creature. There are about 18 other characters besides the Christmas creature. They're all characters from shows that I like, games that I've played, or artists. Oh and I included Nyan Cat because why not. I got all the skins for the characters from <a href="http://www.planetminecraft.com/">planetminecraft.com</a>.
+      </p>
+      
 
-		</font>
-	</body>
+      <h4>Libraries</h4>
+      <p>
+        <a href="http://threejs.org/">THREE.js </a>-- library used to create and display animated 3D computer graphics on a Web browser <br>
+        <a href="https://github.com/jeromeetienne/threex/tree/master/src/threex.minecraft">THREEX.minecraft.js</a>-- bunch of game extension libraries for THREE.js to create minecraft characters <br>
+        <a href="https://github.com/auduno/headtrackr/">headtrackr.js</a>-- Headtracking library <br>
+      </p>
+
+      <h3><u>VIDEO DEMO/SCREENSHOTS</u></h4>
+    
+
+      <img src="https://files.nyu.edu/caj303/public/graphics/final/demos/screenshot1.png" alt= "screenshot1" style="width:304px;height:228px">
+      <img src="https://files.nyu.edu/caj303/public/graphics/final/demos/screenshot2.png" alt= "screenshot2" style="width:304px;height:228px">
+      <img src="https://files.nyu.edu/caj303/public/graphics/final/demos/screenshot3.png" alt= "screenshot3" style="width:304px;height:228px">
+      <br>
+      <iframe width="560" height="315" src="//www.youtube.com/embed/GoH_t-0wlXc" frameborder="0" allowfullscreen></iframe>
+
+	  <!-- Footer
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+      <hr>
+      	<a href = https://www.chrisjim.com> 
+          <div>
+            <img class ="icon" src="images/me_icon.png"/> Personal Account
+          </div>
+        </a>
+      	<a href = https://www.github.com/chrisjimenez>
+          <div>
+            <img class ="icon" src="images/github_icon.png"/>Github Account
+          </div>
+      	</a>
+      </hr>
+	</div>	
+  <!-- End of Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– --> 
+  </body>
 </html>
-
-
-
-
-
 
