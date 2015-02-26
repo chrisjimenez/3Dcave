@@ -13,16 +13,10 @@ var videoInput = document.getElementById('inputVideo');
 var canvasInput = document.getElementById('inputCanvas');
 
 //  set up 3D scene
-var container, stats;
+var container;
 var camera, scene, renderer;
 var plane;
 
-
-//  set up stat window
-var stats = new Stats();
-stats.domElement.style.position = 'absolute';
-stats.domElement.style.top = '0px';
-document.body.appendChild( stats.domElement );
 
 init();
 setUpHeadTracker();
@@ -70,8 +64,6 @@ function init() {
 function animate() {
 
   renderer.render(scene, camera);
-
-  stats.update();
 
   requestAnimationFrame( animate );
   animateCharacters();

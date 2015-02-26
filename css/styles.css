@@ -21,7 +21,10 @@ h1 {
 p{
   color: darkgrey;
 }
-
+canvas { 
+  width: 100%; 
+  height: 100% 
+}
 
 .alert-danger{
   font-family: Arial;
