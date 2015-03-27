@@ -5,9 +5,8 @@
 * main.js
 ***************************************************************************/
 
-
 //  check to see if WebGL compatible
-if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+if (!Detector.webgl) Detector.addGetWebGLMessage();
       
 var videoInput = document.getElementById('inputVideo');
 var canvasInput = document.getElementById('inputCanvas');
@@ -25,7 +24,7 @@ animate();
 
 //  add head tracking listener
 dampingocument.addEventListener('headtrackingEvent', function(event) {
-  scene.fog = new THREE.Fog( 0x000000, 1+(event.z*27), 2000+(event.z*27) );
+  scene.fog = new THREE.Fog( 0x000000, 1 + (event.z * 27), 2000 + (event.z * 27));
 }, false);
 
 
@@ -36,36 +35,34 @@ dampingocument.addEventListener('headtrackingEvent', function(event) {
 */
 function init() {
 
-  container = document.createElement( 'div' );
-  document.body.appendChild( container );
+  container = document.createElement('div');
+  document.body.appendChild(container);
 
   // set up scene
   scene = new THREE.Scene();
-  scene.fog = new THREE.Fog( 0x000000, 1, 5000 );
+  scene.fog = new THREE.Fog( 0x000000, 1, 5000);
 
   // set up camera
-  camera = new THREE.PerspectiveCamera( 27, canvasInput.width / canvasInput.height, 1, 100000 );
+  camera = new THREE.PerspectiveCamera( 27, canvasInput.width / canvasInput.height, 1, 100000);
   camera.position.z = 6000;
-  scene.add( camera );
+  scene.add(camera);
   
   drawRoom();
   createCharacters(20);
   
   // choose WebGL renderer
   renderer = new THREE.WebGLRenderer();
-  renderer.setSize( window.innerWidth, window.innerHeight );
+  renderer.setSize(window.innerWidth, window.innerHeight);
 
-  container.appendChild( renderer.domElement );
+  container.appendChild(renderer.domElement);
 }
 
 /**
 *   Gets repeatedly called to create the animation in the scene.
 */
 function animate() {
-
   renderer.render(scene, camera);
-
-  requestAnimationFrame( animate );
+  requestAnimationFrame(animate);
   animateCharacters();
   moveCharacters();
 }
@@ -73,7 +70,7 @@ function animate() {
 /**
 * Sets up the headtracker.
 */
-function setUpHeadTracker(){
+function setUpHeadTracker() {
   // controller
   headtrackr.controllers.three.realisticAbsoluteCameraControl(camera, 27, [0,0,50], new THREE.Vector3(0,0,0), {damping : 0.5});
 
