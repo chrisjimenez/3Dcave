@@ -1,8 +1,6 @@
-/*
-* By: Chris Jimenez
-*
-* CSS for Predator vs. Prey project site
-*/
+/********************************************************************
+* Stylesheet for 3D caveroom site.
+*******************************************************************/
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
@@ -21,6 +19,15 @@ h1 {
 p{
   color: darkgrey;
 }
+
+.footer {
+  color: white;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 canvas { 
   width: 100%; 
   height: 100% 
